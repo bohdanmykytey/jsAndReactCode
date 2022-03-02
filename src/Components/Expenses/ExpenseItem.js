@@ -3,7 +3,12 @@ import ExpenseDate from "./ExpenseDate";
 import Card from '../UI/Card'
 import './ExpenseItem.css';
 
-function ExpenseItem({date, title,  amount}) {
+function ExpenseItem({date, title, amount}) {
+
+  const handleChangeTitleClick = () => {
+    console.log('clicked')
+  }
+
   return (
     <Card className="expense-item">
       <ExpenseDate date={date}/>
@@ -11,6 +16,7 @@ function ExpenseItem({date, title,  amount}) {
         <h2>{title}</h2>
         <div className="expense-item__price">${amount}</div>
       </div>
+      <button onClick={handleChangeTitleClick}>Title Change</button>
     </Card>
   );
 }
